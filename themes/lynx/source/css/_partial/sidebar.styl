@@ -1,0 +1,185 @@
+#sidebar
+    @media mq-normal
+        column(sidebar-column)
+    @media mq-tablet
+        column(sidebar-column-tablet)
+
+.widget
+    @extend $base-style
+    line-height: line-height
+    word-wrap: break-word
+    font-size: 0.9em
+    border-left: 8px solid black
+    ul, ol
+        list-style: none
+        margin: -10px 10px;
+        ul, ol
+            margin: 0 20px
+        ul
+            list-style: disc
+        ol
+            list-style: decimal
+
+.category-list-count
+.tag-list-count
+.archive-list-count
+    padding-left: 5px
+    color: color-grey
+    font-size: 0.85em
+    &:before
+        content: "("
+    &:after
+        content: ")"
+
+.tagcloud
+    a
+        margin-right: 5px
+
+.widget-wrap
+    margin: block-margin 10px
+    @media mq-mini
+        margin: block-margin 20px
+
+.widget-title
+    @extend $block-caption
+    border-left: 8px solid black
+    padding-left: 15px
+    margin-bottom: 0
+    color: black
+    font-size: 1.3em
+    font-weight: 2em
+
+.widget-corner
+    position: absolute
+    box-sizing: border-box
+    margin-top: -1px
+    width: 0
+    height: 0
+    border-top: 20px solid #fe4365
+    border-right: 20px solid transparent
+
+.widget
+    padding: 15px 5px
+    a
+        color: color-sidebar-text
+        text-decoration: none
+        &:hover
+            color: color-sidebar-text-dark
+    ul, ol, dl
+        ul, ol, dl
+            margin-left: 15px
+            list-style: disc
+    ul, ol
+        list-style: none
+        li,
+        .category-list-child
+            padding: 10px 0
+            font-size: font-size
+            border-bottom: 1px solid border-color
+            a
+                color: color-sidebar-text
+        ul, ol
+            list-style: none
+            li
+                border: none
+                &:last-child
+                    padding-bottom: 0px
+    ul:not(#recent-post), ol:not(#recent-post)
+        li
+            a
+                &:before
+                    color: #ccc
+                    content: "\f0da"
+                    font-size: 12px
+                    margin-right: 6px
+                    font-family: FontAwesome
+                    transition: 0.2s ease
+                &:hover:before
+                    color: color-sidebar-text-dark
+
+#toTop
+    @extend $block
+    display: none
+    cursor: pointer
+    text-align: center
+    width: 40px
+    height: 40px
+    color: white
+    font-size: 40px
+    line-height: 40px
+    background: black
+    bottom: 153px
+    position: fixed
+    &:hover
+        background: color-link
+    @media mq-mobile
+        width: 52px
+        height: 52px
+        font-size: 34px
+        line-height: 52px
+    @media mq-mini
+        width: 48px
+        height: 48px
+        font-size: 32px
+        line-height: 48px
+   
+
+#recent-post
+    li
+        clearfix()
+        padding: 10px 0 10px 94px
+    &.no-thumbnail
+        li
+            padding: 10px 0px
+    li
+        .item-thumbnail
+            opacity: 1
+            float: left
+            margin-left: -94px
+            .thumbnail
+                width: 80px
+                height: 80px
+                background: black
+                display: block
+                position: relative
+                overflow: hidden
+                span
+                    width: 100%
+                    height: 100%
+                    display: block
+                .thumbnail-image
+                    position: absolute
+                    background-size: cover
+                    background-position: center
+                    transition: opacity 0.2s transform 0.3s
+                    -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+                .thumbnail-none
+                    background-image: url(thumbnail-default-small)
+                    background-size: 100% 100%
+        .item-inner
+            a
+            .item-category
+                font-size: 13px
+                a
+                    color: color-link
+                    &:hover
+                        color: color-sidebar-text-dark
+                a, .fa
+                    margin-right: 5px
+            .item-title
+                font-size: 15px
+                a
+                    color: color-sidebar-text-dark
+                    text-transform: uppercase
+                    transition: all 0.2s ease
+            .item-date
+                color: #aaa
+                font-size: 13px
+                text-transform: uppercase
+        &:hover
+            .thumbnail-image
+                opacity: 0.5
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            .item-title a
+                color: color-link

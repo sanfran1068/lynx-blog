@@ -1,0 +1,73 @@
+.timeline-wrap
+    border-left: 3px solid color-link
+
+.timeline-row
+    clearfix()
+    margin: 20px 0
+    .node,
+    .title
+        float: left
+    .node
+        margin: 9px 0 0 0px
+        border: 8px solid transparent
+        border-left-color: color-link
+        display: inline-block
+    .content
+        position: relative
+        @extend $block
+        border-top: 5px solid black
+        margin-top: -5px
+        margin-left: 25px
+        position: relative
+        &:after,
+        &:before
+            content: ''
+            position: absolute
+            display: inline-block
+        &:after
+            top: 10px
+            left: -14px
+            border: 7px solid transparent
+            border-right-color: white
+        &:before
+            top: 9px
+            left: -16px
+            border: 8px solid transparent
+            border-right-color: rgba(0, 0, 0, 0.05)
+        h1,
+        .article-meta
+            padding: 10px
+        h1
+            font-size: 16px
+            font-weight: 500
+            a
+                @extend $link-dark
+        .article-meta
+            font-size: 12px
+            line-height: 12px
+            color: color-default + #333
+            border-top: 1px solid #f1f1f1
+            background-color: rgba(245, 245, 245, 0.5)
+        .article-corner
+            position: absolute
+            top: 3px
+            right: 0px
+            z-index: 100
+            width: 0;
+            height: 0;
+            border-top: 10px solid color-link
+            border-right: 10px solid color-link
+            border-left: 10px solid transparent
+            border-bottom: 10px solid transparent
+
+.timeline-row-major
+    .node
+        width: 14px
+        height: 14px
+        font-size: 14px
+        margin: 0 0 0 -17px
+        padding: 6px 8px 10px
+    .title
+        font-size: 18px
+        margin-left: 15px
+        line-height: 30px

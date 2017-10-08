@@ -1,0 +1,95 @@
+
+
+.mySlides {display:none}
+/* 幻灯片容器 */
+
+.mySlides img {
+    position: inherit
+    width: 100%;
+    height: auto;
+}
+.slideshow-container {
+    position: relative
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* 下一张 & 上一张 按钮 */
+.carousel-prev, .carousel-next {
+    cursor: pointer;
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 16px;
+    color: black;
+    font-size: 30px;
+    transition: 0.6s ease;
+}
+
+/* 定位 "下一张" 按钮靠右 */
+.carousel-next {
+    right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.carousel-prev:hover, .carousel-next:hover {
+    color: color-link
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* 标题文本 */
+.text {
+    position: absolute;
+    top: 100px
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+/* 数字文本 (1/3 等) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* 标记符号 */
+.dot {
+    position: absolute;
+    top: 670px;
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 7px #222;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* 淡出动画 */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .4}
+to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}

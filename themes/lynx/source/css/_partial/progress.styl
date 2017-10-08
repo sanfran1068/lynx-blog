@@ -1,0 +1,31 @@
+#progress
+    position: fixed;
+    height: 3px;
+    background: #fe4365;
+    transition: opacity 500ms linear
+    z-index: 100
+
+#progress.done
+    opacity:0
+
+#progress span
+    position:absolute;
+    height:2px;
+    -webkit-box-shadow:#fe4365 1px 0 6px 1px;
+    -webkit-border-radius:100%;
+    opacity:1;
+    width:150px;
+    right:-10px;
+    -webkit-animation:pulse 2s ease-out 0s infinite;
+
+
+@-webkit-keyframes pulse
+    30%
+        opacity:.6
+
+    60%
+        opacity:0;
+
+    100%
+        opacity:.6
+

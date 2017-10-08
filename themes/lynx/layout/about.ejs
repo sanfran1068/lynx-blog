@@ -1,0 +1,87 @@
+<section class="layout-wrap about">
+    <div class="outer page-content-wrap about-wrap">
+        <div class="about-slideshow-container">
+            <div class="mySlides fade">
+                <div class="about-avatar about-center"></div>
+                <br>
+                <h1 class="about-name text-center">Keefe Wang</h1>
+                <div class="about-intro article-entry">
+                    <ul class="undecorated">
+                        <li id="undergraduation"><i class="fa fa-mortar-board"></i>&nbsp 2011.9-2015.6，四川大学，计算机科学与技术专业</li>
+                        <li id="postgraduation"><i class="fa fa-mortar-board"></i>&nbsp 2015.9-2018.3，浙江大学，计算机学院设计学</li>
+                        <li id="internshp"><i class="fa fa-suitcase"></i>&nbsp  2017.6-至今，滴滴出行，Web前端研发工程实习生</li>
+                        <hr>
+                        <li id="major"><i class="fa fa-wrench"></i>&nbsp  研究生课题：专研数据可视化，知识库</li>
+                        <li id="internshp"><i class="fa fa-keyboard-o"></i>&nbsp  掌握Html5、CSS3和JavaScript以及Java后台基础；了解Vue框架和Node.js；使用less/stylus进行CSS预处理，ejs模板；使用Webpack和Gulp自动化构建工具。</li>
+                        <hr>
+                        <li id="email-personal"><i class="fa fa-envelope"></i>&nbsp 个人邮箱：<a href="mailto:595751021@qq.com">595751021@qq.com</a></li>
+                        <li id="email-school"><i class="fa fa-envelope"></i>&nbsp 工作邮箱：<a href="mailto:keefe1068@zju.edu.cn">keefe1068@zju.edu.cn</a></li>
+                        <li id="github"><i class="fa fa-github"></i>&nbsp  <a href="https://github.com/sanfran1068">https://github.com/sanfran1068</a></li>
+                        <li id="dribbble"><i class="fa fa-dribbble"></i>&nbsp  <a href="https://dribbble.com/sanfran1068">https://dribbble.com/sanfran1068</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <h1 class="about-name text-center">Project</h1>
+                <br>
+                <div class="project-panel">
+                    <div id="project1" class="panel">
+                        <img src="../css/images/project1.jpg" />
+                        <h4>工程院创新设计知识服务系统</h4>
+                        <p>项目地址：<a href="http://dsgn.ckcest.cn/">http://dsgn.ckcest.cn/</a></p>
+                        <p>项目内容: 负责技术库子平台的数据挖掘和可视化，主要涉及：网络爬虫、前端可视化、数据清洗和格式化、使用 RDF/OWL 语言和 Protégé 软件处理本体和本体推理，使用和处理 Wikidata 知识等。</p>
+                    </div>
+
+                    <div id="project2" class="panel">
+                        <img src="../css/images/project2.jpg" />
+                        <h4>Lynx Blog</h4>
+                        <p>项目地址：<a href="https://github.com/sanfran1068/sanfran1068.github.io/tree/master">Lynx Blog Themes Using Hexo</a></p>
+                        <p>项目内容: Hexo博客框架的一款主题，采用stylus和ejs模板语言进行编写，在不断地更新和完善中。</p>
+                    </div>
+                    <div id="project3" class="panel">
+                        <img src="../css/images/project3.jpg" />
+                        <h4>滴禹·星程</h4>
+                        <p>项目网站：<a href="http://daijia.xiaojukeji.com/m/jiaojing.html">滴滴出行·滴禹·星程</a></p>
+                        <p>项目内容: 利用大数据进行热力图和车流潮汐的数据可视化项目，为交警的酒驾控制提供服务。</p>
+                    </div>
+
+                    <div id="project4" class="panel">
+                        <img src="../css/images/project4.jpg" />
+                        <h4>H5用户流量可视化</h4>
+                        <p>项目地址：<a disabled="disabled" href="http://xingyun.xiaojukeji.com/funnel">滴滴·星云H5用户流量可视化</a></p>
+                        <p>项目内容: 对H5页面和端页面的事件进行用户PV/UV可配置的流量可视化，对用户行为进行初步的分析。</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <a class="about-prev" onclick="plusSlides(-1)"><span class="fa fa-chevron-left"></span></a>
+            <a class="about-next" onclick="plusSlides(1)"><span class="fa fa-chevron-right"></span></a>
+        </div>
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+
+                slides[slideIndex-1].style.display = "block";
+            }
+        </script>
+    </div>
+</section>
