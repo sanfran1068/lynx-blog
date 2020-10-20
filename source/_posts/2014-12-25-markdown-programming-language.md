@@ -1,6 +1,6 @@
 title: Markdown
 date: 2014-12-25 00:31:00
-banner: http://oqcytejyk.bkt.clouddn.com/lynx.jpg
+<!-- banner: http://oqcytejyk.bkt.clouddn.com/lynx.jpg -->
 categories:
 - Document
 tags:

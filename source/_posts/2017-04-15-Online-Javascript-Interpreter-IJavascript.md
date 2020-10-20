@@ -1,7 +1,7 @@
 layout: post
 title: "IJavascript-个人在线前端代码解释器安装与使用"
 date: 2017-05-09 12:00:00
-banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg
+<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories:
 - Document

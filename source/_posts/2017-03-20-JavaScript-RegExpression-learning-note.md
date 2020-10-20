@@ -1,7 +1,7 @@
 layout: post
 title: "JavaScript正则表达式学习笔记[上]"
 date: 2017-04-12 12:00:00
-banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg
+<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
