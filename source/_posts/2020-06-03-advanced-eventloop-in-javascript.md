@@ -1,13 +1,17 @@
 layout: post
 title: "JavaScript 基于事件循环的并发模型"
 date: 2020-06-03 16:31:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
 tags:
 - JavaScript
 ---
+
+不去了解 JavaScript 的事件循环就相当于没有入门 JavaScript 这门语言程序，本文第一次对事件循环进行了了解和学习。
+
+<!-- more -->
+
 runtime（运行时刻）是指一个程序在运行的状态。JavaScript 的运行时刻有一个基于事件循环的并发模型，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。
 
 ![JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/The_Javascript_Runtime_Environment_Example.svg](JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/The_Javascript_Runtime_Environment_Example.svg)

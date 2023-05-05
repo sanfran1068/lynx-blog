@@ -1,12 +1,12 @@
-<% if (theme.search.insight) { %>
+<% if (theme.search && theme.search.insight) { %>
     <div class="search-form">
         <input type="text" class="ins-search-input search-form-input" placeholder="<%= __('index.search') %>" />
     </div>
-<% } else if (theme.search.swiftype) { %>
+<% } else if (theme.search && theme.search.swiftype) { %>
     <div class="search-form">
         <input type="text" class="st-default-search-input search-form-input" placeholder="<%= __('index.search') %>" />
     </div>
-<% } else if (theme.search.baidu) { %>
+<% } else if (theme.search && theme.search.baidu) { %>
     <%- partial('search/baidu') %>
 <% } else { %>
     <%- search_form({text: __('index.search')}) %>

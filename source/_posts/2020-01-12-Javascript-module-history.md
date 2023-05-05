@@ -1,7 +1,6 @@
 layout: post
 title: "JavaScript模块化"
 date: 2020-01-12 12:30:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Reading
@@ -10,6 +9,10 @@ tags:
 - 读书笔记
 - 规范
 ---
+
+JavaScript 模块化是怎么产生，又是如何发展的？现在的模块化是怎样的构成，怎样使用模块更好地组织我们的代码？本文进行了一些简单的介绍和总结。
+
+<!-- more -->
 
 #### 名词定义先行
 

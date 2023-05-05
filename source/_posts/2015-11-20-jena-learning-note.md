@@ -1,7 +1,6 @@
 layout: post
 title: "Jena学习笔记"
 date: 2015-09-21 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-ontology%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 categories: 
 - Document
 tags:
@@ -14,7 +13,7 @@ tags:
 #### Jena初步了解
 
 JenaAPI的框架如下图：
-![](http://oqcytejyk.bkt.clouddn.com/jena-structure%E7%9A%84%E5%89%AF%E6%9C%AC.jpg)
+![](https://img.alicdn.com/imgextra/i3/O1CN01r61JlO21WqWYrTMd4_!!6000000006993-2-tps-610-590.png)
 
 <!-- more -->
 

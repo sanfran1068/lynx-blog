@@ -1,7 +1,6 @@
 layout: post
 title: "怎样做一个Pragmatic Programmer"
 date: 2020-01-09 12:30:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Reading
@@ -10,6 +9,10 @@ tags:
 - 读书笔记
 - 规范
 ---
+
+怎样成为一个务实的程序员？本文针对原作进行了一些重点的摘录。
+
+<!-- more -->
 
 #### What maks a pragmatic programmer
 1.Early adopter/faster adapter: 善于学习新的技术并能够尝试将其集成在自己的知识库中;

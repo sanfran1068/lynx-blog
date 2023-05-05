@@ -1,7 +1,6 @@
 layout: post
 title: "IJavascript-个人在线前端代码解释器安装与使用"
 date: 2017-05-09 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories:
 - Document
@@ -16,7 +15,7 @@ tags:
 
 ProjectJupyter[1](https://github.com/jupyter)是一项开源的项目，只在创造一个平台供各种开发人员、前沿科学工作者以及坐在电脑前进行工作的各位进行协同开发。该项目下拥有Jupyter Notebook、nbdime、qtconsole等开源应用。本文主要讲述使用Jupyter Notebook应用和IJavascript插件来进行前端代码的可视化编辑、解释以及协同分享。
 
-![](http://oqcytejyk.bkt.clouddn.com/image1.png)
+![](https://img.alicdn.com/imgextra/i4/O1CN01KMRQCb1j1YNXyLSAg_!!6000000004488-49-tps-824-340.webp)
 
 <!-- more -->
 

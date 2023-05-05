@@ -1,7 +1,6 @@
 layout: post
 title: "JavaScript中的原型与继承-原型篇"
 date: 2017-04-12 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
@@ -13,7 +12,7 @@ tags:
 - 读书笔记
 ---
 
-#### 原型
+### 原型
 
 构造函数模式下，对象中的方法作用域只在对象中，对象的不同实例的同名函数都是不相等的。为了解决这个问题，js中创建的每一个函数都有一个prototype属性，这个属性是一个指针，指向一个对象，而这个对象的用途是包含可以由特定类型的所由实例共享的属性和方法。
 
@@ -21,13 +20,13 @@ tags:
 
 #### 原型对象
 
-JavaScript中并没有提供类的实现，虽然在ES2015/ES6之中引入了class关键字，但是JavaScript仍然是基于原型的。而JavaScript中创建对象的方法有：new Object()方法、字面量方法、工厂模式、构造函数方法和**原型模式**。其中，使用原型模式创建对象可以令所有实例共享方法，减少内存消耗，有利于对象继承。
+JavaScript 中并没有提供类的实现，虽然在ES2015/ES6之中引入了 class 关键字，但是 JavaScript 仍然是基于原型的。而 JavaScript 中创建对象的方法有：new Object() 方法、字面量方法、工厂模式、构造函数方法和**原型模式**。其中，使用原型模式创建对象可以令所有实例共享方法，减少内存消耗，有利于对象继承。
 
-JavaScript中的**继承**则是体现在一种结构上——对象，所有的对象都是由Object衍生的对象，所有的对象都继承了Object.prototype的方法和属性（也有可能被覆盖）。每一个对象都有一个内部链接到另一个对象，这个对象成为它的原型（prototype）。而且，该原型对象也有自己的原型，直到追溯到一个以null为原型的对象，因为null是没有原型的，所以可以作为这个**原型链（prototype chain**中的最终链接。
+JavaScript 中的**继承**则是体现在一种结构上——对象，所有的对象都是由Object衍生的对象，所有的对象都继承了 Object.prototype 的方法和属性（也有可能被覆盖）。每一个对象都有一个内部链接到另一个对象，这个对象成为它的原型（prototype）。而且，该原型对象也有自己的原型，直到追溯到一个以 null 为原型的对象，因为 null 是没有原型的，所以可以作为这个**原型链（prototype chain**中的最终链接。
 
 只要创建了一个新函数，就会为该函数创建一个prototype属性，这个属性指向函数的原型对象。所有原型对象都自动获得一个constructor属性，这个属性包含一个指向prototype属性所在函数的指针。
 
-![](http://oqcytejyk.bkt.clouddn.com/image1.jpg)
+![](https://img.alicdn.com/imgextra/i4/O1CN01EtwJ2z1ekpSHFw3CL_!!6000000003910-2-tps-880-359.png)
 
 ##### 原型对象的创建
 

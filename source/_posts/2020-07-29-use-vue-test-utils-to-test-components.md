@@ -1,7 +1,6 @@
 layout: post
 title: "使用 vue-test-utils 进行测试"
 date: 2020-07-29 22:23:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
@@ -10,7 +9,12 @@ tags:
 - Vue
 - Test
 ---
-## 插件安装
+
+针对 Vue 2.0 的项目，怎样更简单方便地进行测试？本文对 vue-test-util 工具的使用方法进行了简单总结。
+
+<!-- more -->
+
+### 插件安装
 
 我们使用 Vue CLI 脚手架进行项目的创建，按照提示一步步进行项目配置，尽量都选择无任何配置，尤其是自带的测试插件：
 
@@ -22,7 +26,7 @@ vue create vue-test
 
 由于我们是在 Vue 项目中进行测试，采用的是 vue-test-utils 这个测试工具插件进行测试，所以下面几类 npm 插件是必须要安装的：
 
-- jest 相关
+### jest 相关
 
     jest 是 vue-test-utils 官方推荐的测试运行器，所以这个插件是必要的；要使用 jest 来处理 *.vue 文件，需要安装和配置 vue-jest 插件。
 
@@ -46,7 +50,7 @@ vue create vue-test
     }
     ```
 
-- babel 相关
+### babel 相关
 
     我们一般都不可避免地希望在代码中使用 ES2015 的特性，这时我们需要安装 babel 相关的插件，其中 babel-jest 是测试中的 ES2015 特性编译的插件
 

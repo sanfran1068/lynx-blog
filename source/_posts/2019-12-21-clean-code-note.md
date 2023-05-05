@@ -1,7 +1,6 @@
 layout: post
 title: "Clean Code规范整理"
 date: 2019-12-21 11:30:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Reading
@@ -11,7 +10,11 @@ tags:
 - 规范
 ---
 
-#### 变量：
+本文针对 Clean Code 一书进行了一些关键内容和提纲的总结。
+
+<!-- more -->
+
+#### 变量
  	1.变量名有意义
  	2.不使用魔法数字
  	3.参数用变量而不是数字
@@ -19,7 +22,7 @@ tags:
  	5.属性中不要出现类名/对象名
  	6.方法参数使用默认值检查参数是否为undefined
 
-#### 方法：
+#### 方法
  	1.使用一到两个形参（或方法复杂、使用对象类型参数、形参的解构赋值）
  	2.一个方法应该只做一件事！
  	3.方法名要能自我解释

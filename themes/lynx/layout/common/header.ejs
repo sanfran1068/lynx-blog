@@ -2,7 +2,7 @@
     <div id="header-main" class="header-inner">
         <div class="outer">
             <a href="<%- url_for() %>" id="logo">
-                <%- (theme.customize.logo && theme.customize.logo.enabled ? '<i class="logo"></i>':'') %>
+                <%- (theme.customize && theme.customize.logo && theme.customize.logo.enabled ? '<i class="logo"></i>':'') %>
                 <span class="site-title"><%= config.title %></span>
             </a>
 
@@ -14,7 +14,7 @@
                 <% } %>
             </nav>
 
-            <!--<% if(theme.customize.profile && theme.customize.profile.enabled) { %>
+            <% if(theme.customize && theme.customize.profile && theme.customize.profile.enabled) { %>
                 <% var profile = theme.customize.profile; %>
                 <nav id="sub-nav">
                     <div class="profile" id="profile-nav">
@@ -24,7 +24,7 @@
                         </a>
                     </div>
                 </nav>
-            <% } %>-->
+            <% } %>
 
         </div>
     </div>

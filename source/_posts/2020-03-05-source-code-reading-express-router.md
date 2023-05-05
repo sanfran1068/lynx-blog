@@ -1,7 +1,6 @@
 layout: post
 title: "Express源码阅读-router相关"
 date: 2020-03-15 12:30:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - SourceCodeReading
@@ -12,7 +11,9 @@ tags:
 - NodeJS
 ---
 
-Express 是一种保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。
+Express 是一种保持最低程度规模的灵活 Node.js Web 应用程序框架，为 Web 和移动应用程序提供一组强大的功能。本文针对该框架进行一些简单的源码解读。
+
+<!-- more -->
 
 ### Express中的app
 

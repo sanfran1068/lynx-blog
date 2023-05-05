@@ -1,7 +1,6 @@
 layout: post
 title: "Ontology本体基础知识总结整理"
 date: 2015-09-21 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-ontology%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document

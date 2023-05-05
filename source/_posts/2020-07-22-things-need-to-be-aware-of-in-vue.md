@@ -1,7 +1,6 @@
 layout: post
 title: "Vue 中容易被忽视的小功能"
 date: 2020-07-22 19:03:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
@@ -10,6 +9,11 @@ tags:
 - Vue
 - Framework
 ---
+
+在使用 Vue 2.0 开发项目的过程中，会发现有很多容易忽略或者令人迷惑的一些小方法和概念，本文针对这些”遗珠“进行了一个整理，方便分享和以后查阅。
+
+<!-- more -->
+
 ## 组件通信
 
 ### Prop相关

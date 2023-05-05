@@ -1,7 +1,6 @@
 layout: post
 title: "JavaScript中的原型与继承-继承篇"
 date: 2017-04-13 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
@@ -13,7 +12,7 @@ tags:
 - 读书笔记
 ---
 
-#### 原型链
+### 原型链
 
 原型链是实现继承的主要方法，基本思想是**利用原型让一个引用类型继承另一个引用类型的属性和方法**。回顾构造函数、原型和实例之间的关系：每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型的内部指针。
 
@@ -21,7 +20,7 @@ tags:
 
 <!-- more -->
 
-![](http://oqcytejyk.bkt.clouddn.com/image2.jpg)
+![](https://img.alicdn.com/imgextra/i3/O1CN01cZNppR1oI6m42LpPs_!!6000000005201-1-tps-1536-932.gif)
 
 由上图可以看出，原型链中，每个对象都有一个内部指针指向原型对象，而原型对象内部也会有指针指向另一个原型对象。图中新创建的Fruit和继承Fruit的Apple和Banana这样的对象的原型对象，首先会追溯到Object，而通过JavaScript的控制台使用Object.getPrototypeOf(obj)的方法得出Object的原型是function，而function的原型又会指向到Object，最后Object的原型最终会是null，到此为止null再也不会有原型对象。
 

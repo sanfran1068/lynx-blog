@@ -1,7 +1,6 @@
 layout: post
 title: "前端要学习的http基础知识"
 date: 2017-09-21 12:00:00
-banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg
 comments: true
 categories: 
 - Document
@@ -119,7 +118,7 @@ Hyper Text Transfer Protocol(超文本传输协议)，基于TCP/IP通信协议�
 |Range	|	只请求实体的一部分，指定范围	|Range: bytes=500-999|
 |Referer	|	先前网页的地址，当前请求网页紧随其后,即来路||
 |User-Agent|		包含发出请求的用户信息|	User-Agent: Mozilla/5.0 (Linux; X11)|
-|Warning	|	关于消息实体的警告信息||
+|Warning	|	关于消息实体的警告信息| |
 
 - 响应头：
 
@@ -147,7 +146,7 @@ Hyper Text Transfer Protocol(超文本传输协议)，基于TCP/IP通信协议�
 |Trailer|	指出头域在分块传输编码的尾部存在|	Trailer: Max-Forwards|
 |Vary|	告诉下游代理是使用缓存响应还是从原始服务器请求	|Vary: *|
 |Warning|	警告实体可能存在的问题	|Warning: 199 Miscellaneous warning|
-|WWW-Authenticate|	表明客户端请求实体应该使用的授权方案||
+|WWW-Authenticate|	表明客户端请求实体应该使用的授权方案| |
 
 ##### HTTP请求方法
 

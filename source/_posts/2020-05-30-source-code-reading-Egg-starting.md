@@ -1,7 +1,6 @@
 layout: post
 title: "EggJS源码阅读-启动流程与代码实现"
 date: 2020-05-23 12:30:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - SourceCodeReading
@@ -12,7 +11,9 @@ tags:
 - NodeJS
 ---
 
->egg是阿里开源的一个框架，为企业级框架和应用而生，相较于express和koa，有更加严格的目录结构和规范。不同的团队可以基于egg，根据自己的需求封装出适合团队业务的更上层框架。
+egg是阿里开源的一个框架，为企业级框架和应用而生，相较于express和koa，有更加严格的目录结构和规范。不同的团队可以基于egg，根据自己的需求封装出适合团队业务的更上层框架。本文对 egg.js 源码进行一个简要的入门阅读和解析。
+
+<!-- more -->
 
 ### egg如何启动
 

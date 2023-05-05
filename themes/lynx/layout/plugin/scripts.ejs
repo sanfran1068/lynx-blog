@@ -1,21 +1,21 @@
 <% if (typeof(isHead) !== 'undefined' && isHead) { %>
-    <% if (theme.plugins.lightgallery) { %>
+    <% if (theme.plugins && theme.plugins.lightgallery) { %>
         <%- css('libs/lightgallery/css/lightgallery.min') %>
     <% } %>
-    <% if (theme.plugins.justifiedgallery) { %>
+    <% if (theme.plugins && theme.plugins.justifiedgallery) { %>
         <%- css('libs/justified-gallery/justifiedGallery.min') %>
     <% } %>
-    <% if (theme.plugins.google_analytics) { %>
+    <% if (theme.plugins && theme.plugins.google_analytics) { %>
         <%- partial('plugin/google-analytics') %>
     <% } %>
-    <% if (theme.plugins.google_site_verification) { %>
+    <% if (theme.plugins && theme.plugins.google_site_verification) { %>
         <meta name="google-site-verification" content="<%= theme.plugins.google_site_verification %>" />
     <% } %>
-    <% if (theme.plugins.baidu_analytics) { %>
+    <% if (theme.plugins && theme.plugins.baidu_analytics) { %>
         <%- partial('plugin/baidu-analytics') %>
     <% } %>
 <% } else { %>
-    <% if (theme.plugins.lightgallery) { %>
+    <% if (theme.plugins && theme.plugins.lightgallery) { %>
         <%- js('libs/lightgallery/js/lightgallery.min') %>
         <%- js('libs/lightgallery/js/lg-thumbnail.min') %>
         <%- js('libs/lightgallery/js/lg-pager.min') %>
@@ -26,10 +26,10 @@
         <%- js('libs/lightgallery/js/lg-share.min') %>
         <%- js('libs/lightgallery/js/lg-video.min') %>
     <% } %>
-    <% if (theme.plugins.justifiedgallery) { %>
+    <% if (theme.plugins && theme.plugins.justifiedgallery) { %>
         <%- js('libs/justified-gallery/jquery.justifiedGallery.min') %>
     <% } %>
-    <% if (theme.plugins.mathjax) { %>
+    <% if (theme.plugins && theme.plugins.mathjax) { %>
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
         </script>

@@ -1,7 +1,6 @@
 layout: post
 title: "Vue 高级用法与精粹"
 date: 2020-07-23 19:32:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document
@@ -10,6 +9,11 @@ tags:
 - Vue
 - Framework
 ---
+
+本文针对 Vue 2.0 中的复用与组合、自定义指令、渲染函数、插件和过滤器等高级功能进行学习和总结。
+
+<!-- more -->
+
 ## 复用与组合
 
 ### Mixin

@@ -1,7 +1,6 @@
 layout: post
 title: "JS语言精粹中的精粹"
 date: 2017-10-10 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/post-bg-javascript%E7%9A%84%E5%89%AF%E6%9C%AC.jpg -->
 comments: true
 categories: 
 - Document

@@ -1,7 +1,6 @@
 layout: post
 title: "形状文法简介"
 date: 2017-10-08 12:00:00
-<!-- banner: http://oqcytejyk.bkt.clouddn.com/shape-grammar-post-background.jpg -->
 comments: true
 categories: 
 - Research
