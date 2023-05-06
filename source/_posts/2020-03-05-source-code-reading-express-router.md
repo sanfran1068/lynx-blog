@@ -150,11 +150,11 @@ app.lazyrouter = function lazyrouter() {
 
 我们先以 `app.get` 为例，通过断点调试的方式来查看 `app.get` 这种路由的 `_router` 对象是什么结构。
 
-![702ca38d0160d8b82ab5d1b7a552bec1.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZmI2ODUxODEtZjg1Yi00MTc3LTg5MTUtMTMxYTY5OTU2NWU2IiwicmVzb3VyY0d1aWQiOiIzMzk0MTlkZi05NDNlLTQzNzAtOTc0YS1mYjI5NmU3MzQxMDgifQ==)
+![702ca38d0160d8b82ab5d1b7a552bec1.png](https://img.alicdn.com/imgextra/i4/O1CN0155CNRA1Gm9p9PNuL4_!!6000000000664-0-tps-1011-1542.jpg)
 
 上面的截图是当我们初始化一个 express 实例，并设置了一个 `app.get()` 的路由后，在 app.listen 处添加断点进行调试时的 app 实例的属性。可以看到在 `app._router` 中有一个 stack，里面按顺存放着三个 layer 对象，分别是初始化时的 query 和 init 两个路由，和第三个则是我们所设置的 get 路由。每一个 layer 中包含路由处理的回调函数 `handle`，路由对象 `route<Route>`，该对象中还包含一个存有 Layer 对象的栈（stack)，就和 `app._router.stack` 相同。
 
-![81b68f825db7a3f5bf1ff7d87c09496d.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZmI2ODUxODEtZjg1Yi00MTc3LTg5MTUtMTMxYTY5OTU2NWU2IiwicmVzb3VyY0d1aWQiOiJkOGY5MWM1ZC1lOWRkLTRmNDYtYmJlMC01MGRkNjJjMDUzMTYifQ==)
+![81b68f825db7a3f5bf1ff7d87c09496d.png](https://img.alicdn.com/imgextra/i2/O1CN01HG9tIS1lp8UOWG4zm_!!6000000004867-0-tps-1220-654.jpg)
 
 根据上面对于 `app.get` 这种路由的结构分析，我们可以先猜想它的实现流程：
 
@@ -166,7 +166,7 @@ app.lazyrouter = function lazyrouter() {
 
 接下来我们来看 `app.use` 这种路由又有什么不同。
 
-![08bdd22fe221f77141d8af6afb5ac8bc.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZmI2ODUxODEtZjg1Yi00MTc3LTg5MTUtMTMxYTY5OTU2NWU2IiwicmVzb3VyY0d1aWQiOiIyNzA3MmYzNC03ZTY0LTQ0ODUtOTQxNC05M2RkMmVjNTkwMWYifQ==)
+![08bdd22fe221f77141d8af6afb5ac8bc.png](https://img.alicdn.com/imgextra/i4/O1CN01xkM27Y1WTrrERnA8w_!!6000000002790-0-tps-1058-1713.jpg)
 
 可以看到，在这种路由中，除了 `query` 和 `init` 两个初始化路由的方法外，第三个真正的回调方法被封装成的 `Layer` 对象中，`route` 属性的值为 `undefined`。
 所以我们可以猜想：在 `app.use` 这种路由里，传入的参数（路径、回调函数）会被封装成 `Layer` 对象（其中 `route` 属性为 `undefined`），压入 `app._router.stack` 栈中。
@@ -292,4 +292,4 @@ methods.forEach(function(method){
 
 至此，在调用 `route[method].apply()` 时就会为 `app.METHODS` 这种类型的路由的 `Layer` 中添加 `route<Route>` 属性。
 
-![e6778eb14b0b4f77fc6bc60d49e9a053.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZmI2ODUxODEtZjg1Yi00MTc3LTg5MTUtMTMxYTY5OTU2NWU2IiwicmVzb3VyY0d1aWQiOiIyYWEwMDk1ZS1jOGQwLTRkNjMtOWUzNi0yNGZmMjY4NjllOTkifQ==)
+![e6778eb14b0b4f77fc6bc60d49e9a053.png](https://img.alicdn.com/imgextra/i2/O1CN01bP9D781hvJMo0r6nj_!!6000000004339-0-tps-1183-691.jpg)

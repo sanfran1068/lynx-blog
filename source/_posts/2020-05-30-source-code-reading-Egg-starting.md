@@ -17,7 +17,7 @@ egg是阿里开源的一个框架，为企业级框架和应用而生，相较�
 
 ### egg如何启动
 
-![fca8379caeffb9c194aa5369db1c563b.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZDc4MmQxN2MtM2FjYS00MDZhLTk4MDktOGRmMzMwY2M3ZGQxIiwicmVzb3VyY0d1aWQiOiJiMzZlODM2OS0xNzY1LTQzOTEtOTAzOC0zN2Q0NmE0NWVjNjAifQ==)
+![fca8379caeffb9c194aa5369db1c563b.png](https://img.alicdn.com/imgextra/i4/O1CN01gbgC311e0ZRz21oLP_!!6000000003809-0-tps-1268-1002.jpg)
 
 根据`package.json`中的`script`命令，可以看到执行的直接是`egg-bin dev`的命令。找到`egg-bin`文件夹中的`dev.js`,会看到里面会去执行外层的`start-cluster`文件:
 
@@ -56,14 +56,14 @@ this.once('agent-start', this.forkAppWorkers.bind(this));
 
 #### AgentWorker与AppWorker进程的启动
 
-![de59fd88a438492231f38fb2032ffd5b.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZDc4MmQxN2MtM2FjYS00MDZhLTk4MDktOGRmMzMwY2M3ZGQxIiwicmVzb3VyY0d1aWQiOiI3ZmViNGFmYS1kMzNlLTQ1MDgtYjAyNi0wYWIyOGRkMDc2Y2MifQ==)
+![de59fd88a438492231f38fb2032ffd5b.png](https://img.alicdn.com/imgextra/i4/O1CN01Fyk5k31EQVsRROl7M_!!6000000000346-0-tps-1337-1029.jpg)
 
 
 在启动`AgentWorker`和`AppWorker`时，会分别加载`agent_worker.js`和`app_worker.js`两个文件并创建进程，其中`agent_worker.js`中会创建`Agent`类的实例，而`app_worker.js`中会创建`Application`类的实例。
 
 两种进程在启动时都会调用`this.loader.load()`方法来加载自己相应的一些插件和自定义的扩展。
 
-![18d21732106d0293791bf03d6481784b.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZDc4MmQxN2MtM2FjYS00MDZhLTk4MDktOGRmMzMwY2M3ZGQxIiwicmVzb3VyY0d1aWQiOiI0MDczM2IwZi04OTc0LTQxNzctYjM4Zi0zN2I0MTE3ZGQ2MjAifQ==)
+![18d21732106d0293791bf03d6481784b.png](https://img.alicdn.com/imgextra/i1/O1CN01aX0q421ZQbtFSpqUz_!!6000000003189-0-tps-1335-716.jpg)
 
 基于`egg_loader`实现了`AppWorkerLoader`和 `AgentWorkerLoader`，上层框架基于这两个类来扩展，`Loader`的扩展只能在框架进行。
 
@@ -99,7 +99,7 @@ export default MyAppWorkerLoader
 
 #### Agent如何实现
 
-![f2ac3732452f487f21e11c0de480f3df.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZDc4MmQxN2MtM2FjYS00MDZhLTk4MDktOGRmMzMwY2M3ZGQxIiwicmVzb3VyY0d1aWQiOiJmMTAwMWJlZi05OWMwLTQ3Y2MtYjk3NS1kYmZiNjI1N2VkNjMifQ==)
+![f2ac3732452f487f21e11c0de480f3df.png](https://img.alicdn.com/imgextra/i1/O1CN01zkrj4o1OUliCxYhjc_!!6000000001709-0-tps-1093-760.jpg)
 
 `Agent`对象在`egg-cluster`创建环节中被创建出来，继承自`egg.Agent`对象，该对象继承`EggApplication`,且`loader`为`./lib/loader/agent_worker_loader.js`文件，继承自`egg-core.eggLoader`对象，整体继承链如上图。
 
@@ -202,4 +202,4 @@ class AgentWorkerLoader extends EggLoader {
 
 2. `Agent`和`Application`在实例化的过程中，都会调用相应的Loader去加载自己所需的插件和配置，且加载顺序严格按照**插件plugin-框架framework-应用application**这样一个顺序
 
-![0464781205f05b89c1b8807280114dd8.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiZDc4MmQxN2MtM2FjYS00MDZhLTk4MDktOGRmMzMwY2M3ZGQxIiwicmVzb3VyY0d1aWQiOiIwZGM3ZmY3Mi1iZjM1LTQzZDMtODE1Ni0wMDk2YmQyY2FiMDUifQ==)
+![0464781205f05b89c1b8807280114dd8.png](https://img.alicdn.com/imgextra/i1/O1CN015m0LOC1ZwfcF0EBGW_!!6000000003259-2-tps-888-2235.png)

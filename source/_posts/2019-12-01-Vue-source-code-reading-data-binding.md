@@ -29,7 +29,7 @@ tags:
 
 ### 数据响应式的中心思想
 
-![5de7af21d4c2de951720c006f84b98fc.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiMWVmM2MyOWMtYzg4YS00ZDI0LTllYjMtYTUwMmZhNmMwODM0IiwicmVzb3VyY0d1aWQiOiI2MTI4MTIwZS1kNWUxLTQxZDgtODFkOS1hNTIyNWM1ODM4Y2MifQ==)
+![5de7af21d4c2de951720c006f84b98fc.png](https://img.alicdn.com/imgextra/i3/O1CN01cFZ8g61hW7aEmNpAt_!!6000000004284-0-tps-1080-483.jpg)
 
 该原理图源自 Vue 官方教程的[深入响应式原理](https://cn.vuejs.org/v2/guide/reactivity.html)，这张图向我们展示了 Vue 的数据响应式的中心思想。
 
@@ -39,7 +39,7 @@ tags:
 
 基本上大家都了解 Vue 的数据响应式原理是由 JS标准内置对象方法 **Object.defineProperty** 来实现的，而这个方法是**不兼容IE8和FF22及以下版本**的浏览器的，所以 Vue 也只能在这些版本之上的浏览器中才能正常使用。这个方法的作用是直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。那么数据响应式用这个方法为**什么对象**添加或修改了**什么属性**呢？我们从 Vue 的初始化讲起。
 
-![99d9a00af95016a8e9b0b558fd4249ab.png](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiMWVmM2MyOWMtYzg4YS00ZDI0LTllYjMtYTUwMmZhNmMwODM0IiwicmVzb3VyY0d1aWQiOiIzZTI1NmNmOS1iOWQ4LTRlYjQtOWJiMy1iNTI4ZDU3MWZlYmMifQ==)
+![99d9a00af95016a8e9b0b558fd4249ab.png](https://img.alicdn.com/imgextra/i2/O1CN01o7s5Vq1LmDxgNOdI0_!!6000000001341-0-tps-1080-328.jpg)
 
 #### Vue 的初始化
 
@@ -162,7 +162,7 @@ constructor (value: any) {
 
 其真实的逻辑我们举例来说明：当前正在渲染组件 ComponentA，会将当前全局唯一的监听器置为这个 Watcher，这个组件中使用到了数据 `data () { return { a: b + 1} }`，此时触发b的 getter 会将当前的 watcher 添加到b的订阅者列表 subs 中。也就是说如果 ComponentA 依赖 b，则将该组件的渲染 Watcher 作为订阅者加入b的订阅者列表中。
 
-![1e9dfeb2187b782e42b78196a723f860.jpeg](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiMWVmM2MyOWMtYzg4YS00ZDI0LTllYjMtYTUwMmZhNmMwODM0IiwicmVzb3VyY0d1aWQiOiJkZjIxMjIzYi0zN2NkLTQyNTgtOTVhYi02NjM4MzNkZjFlZTIifQ==)
+![1e9dfeb2187b782e42b78196a723f860.jpeg](https://img.alicdn.com/imgextra/i3/O1CN01zHQHVX1ya6UYKS6gb_!!6000000006594-0-tps-1080-427.jpg)
 
 我们先看下 [get](https://github.com/DQFE/vue/blob/dev/src/core/observer/index.js#L160) 属性方法：
 ```javascript

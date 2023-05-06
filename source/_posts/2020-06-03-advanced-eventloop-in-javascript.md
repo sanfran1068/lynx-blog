@@ -14,7 +14,7 @@ tags:
 
 runtime（运行时刻）是指一个程序在运行的状态。JavaScript 的运行时刻有一个基于事件循环的并发模型，事件循环负责执行代码、收集和处理事件以及执行队列中的子任务。
 
-![JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/The_Javascript_Runtime_Environment_Example.svg](JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/The_Javascript_Runtime_Environment_Example.svg)
+![The_Javascript_Runtime_Environment_Example](https://img.alicdn.com/imgextra/i1/O1CN01JTr8Wt1WAApPxCxng_!!6000000002747-55-tps-295-271.svg)
 
 JavaScript 中的函数调用会形成一个由若干帧组成的栈，当一个函数中存在闭包函数时，外层函数会先压入栈中，其中包含参数和局部变量；闭包函数跟着压入栈中，也包含了自己的参数和局部变量。闭包函数先从栈中弹出，执行完了之后外层函数从栈中弹出执行，栈就被清空了。
 
@@ -47,11 +47,11 @@ loop();
 
 到目前为止，在事件循环中，我们认识到了主线程、任务队列和渲染任务队列。当主线程任务全部执行完成清空后，会从非空的任务队列中拿第一个任务到主线程尽心执行，每次循环都是只取一个任务队列中的任务。而渲染任务则是一次性执行完成的。
 
-![JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1.png](JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1.png)
+![O1CN01QUc4TE1iugRDgt0iq_](https://img.alicdn.com/imgextra/i2/O1CN01QUc4TE1iugRDgt0iq_!!6000000004473-2-tps-1536-636.png)
 
 实际上，浏览器总还有一个 microTask queue，这个队列中一般我们遇到的 99.9% 应该都是以 promise 形式出现的，microTask 执行的时间是每一段 JS 代码执行完毕（主线程任务清空、任务队列取得第一个任务到主线程并执行完、浏览器渲染任务执行完）都会进行执行，而且一旦执行，microTask queue 中无论有多少个任务（包括同时添加进来的任务）都会一直执行完。所以，microTask queue 是会产生阻塞的。
 
-![JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1%201.png](JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1%201.png)
+![O1CN01bpN7Ky1eCw92MQLdq_](https://img.alicdn.com/imgextra/i2/O1CN01bpN7Ky1eCw92MQLdq_!!6000000003836-2-tps-1535-746.png)
 
 如上图所示，我们所知的浏览器的事件循环有以下的几种队列机制：
 
@@ -106,7 +106,7 @@ while (true) {
 
 NodeJS 的事件循环基本上与浏览器中的事件循环是一致的，只不过浏览器使用的是 WebAPIs，而 NodeJS 中使用的是 C++ APIs。
 
-![JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1%202.png](JavaScript%20%E5%9F%BA%E4%BA%8E%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%B9%B6%E5%8F%91%E6%A8%A1%E5%9E%8B%20b0cfb1289e8e4098b7cae991e050b301/_1%202.png)
+![O1CN01Xv7ETw1Q5EroGIgBS_](https://img.alicdn.com/imgextra/i4/O1CN01Xv7ETw1Q5EroGIgBS_!!6000000001924-2-tps-1383-703.png)
 
 主线程与异步任务队列执行以及 microTask 任务队列都与浏览器中的事件循环相同，我们可以看到上图中多了三个没有见到过的任务队列：
 

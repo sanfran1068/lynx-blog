@@ -33,9 +33,8 @@ tags:
 没有使用CDN时请求服务器资源：localDNS-rootDNS-逐级查询到域名授权的DNS记录-使用查询到的ip去请求内容
 使用了CDN之后：localDNS-rootDNS-逐级查询到域名授权的DNS记录-向DNS服务器请求最优ip地址-使用该ip去CDN节点服务器返回对应的资源
 
-![DNS解析流程图](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiIwN2JkOWFiOS0zZTYyLTQzNTMtYmQ3YS0yNWE2ZjA4ZDk0MGEifQ==)
-
-![DNS解析流程图](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiI1ZWRmZWExMC0xOTAwLTQzMmYtYTUwZS1lYmVkZjI4YzIxY2QifQ==)
+![DNS解析流程图](https://img.alicdn.com/imgextra/i1/O1CN01CyEdCz1VBG9VdQ4xB_!!6000000002614-0-tps-800-518.jpg)
+![DNS解析流程图](https://img.alicdn.com/imgextra/i1/O1CN01IDCe7X1qbSk8Ue29Z_!!6000000005514-0-tps-2584-1460.jpg)
 
 #### TCP连接
 网站请求大部分使用http请求，http协议是使用tcp作为其传输层协议，（应用http、传输tcp、网络ip、数据、物理），http由tcp报文中提取。
@@ -55,17 +54,17 @@ https在原有tcp握手的基础上需要提前进行一个解密握手。https�
 文档来源：https://www.html5rocks.com/en/tutorials/internals/howbrowserswork
 主要文章：https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_rendering_engine
 总流程：
-![浏览器解析渲染页面总流程](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiI3Njc1ZTE1ZS1hZjZhLTRlMmItYmZmNC05OTU3ZGIzM2YyNzYifQ==)
+![浏览器解析渲染页面总流程](https://img.alicdn.com/imgextra/i3/O1CN01Qnfdal1fBOQSgeKkv_!!6000000003968-0-tps-600-66.jpg)
 
 没有脚本的流程：
-![没有脚本的流程](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiI4MTNmMmU1Yi05M2I5LTQ5NTItYWIzYy0yZmE1NzA2ZjQ5YmMifQ==)
+![没有脚本的流程](https://img.alicdn.com/imgextra/i1/O1CN016XZiQ31QdaZTG2t5w_!!6000000001999-0-tps-624-289.jpg)
 
 HTML Parsing: 输出DOM tree
 HTML不是一种context free grammar，是因为它不同于XML，它允许一些类似标签缺失等的容错
 分为两部分：tokenize和tree construction
 Tokenize：状态机实现，初始状态为DATA，遇到<状态改为TAGOPEN，之后遇到第一个a-z的字符状态改为TAGNAME，之后遇到>状态改为DATA，直到</>，tokenize就commit一个token，
 Tree Construction：状态机实现。Document Object在token的parser创建时同时创建，每当一个token被commited，constroctor会判断该token跟哪个dom元素相关，新建该token的元素，并添加到开放元素栈（这个栈用于检查标签闭合以及未正常闭合标签）中：
-![DOM tree 生成](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiI1ZWEwYjRlMi03ZTg1LTRjNzAtOGNhMi0yMjc2NGExZWE2NGYifQ==)
+![DOM tree 生成](https://img.alicdn.com/imgextra/i2/O1CN01V0qNep1cVb3Fykjrr_!!6000000003606-0-tps-532-769.jpg)
 
 css和js的parse过程：
 Firefox blocks all scripts when there is a style sheet that is still being loaded and parsed. 
@@ -76,4 +75,4 @@ render tree构建过程中，构建方法对head标签以及display:none的标�
 
 Web优化
 雅虎35条军规：https://juejin.im/post/5b73ef38f265da281e048e51
-![35条军规](https://app.yinxiang.com/files/common-services/binary-datas/c2VydmljZVR5cGU9MiZzZXJ2aWNlRGF0YT17Im5vdGVHdWlkIjoiNmMwYzU1MDItZTBkNy00MmUxLWJmNzctZTZiZmQzN2RhMDI0IiwicmVzb3VyY0d1aWQiOiJhODJiMjU2NS1kNTFiLTQzYjMtOTZkYS0wNzIwNmE3MTRlYjYifQ==)
+![35条军规](https://img.alicdn.com/imgextra/i4/O1CN01BU8Wr61Ywq9E8e29w_!!6000000003124-0-tps-1668-1230.jpg)

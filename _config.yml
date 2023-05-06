@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Lynx-Blog
+title: Keefe's Café
 subtitle:
 description:
 author: Keefe Wang
@@ -71,3 +71,9 @@ deploy:
   type: git
   repo: https://github.com/sanfran1068/sanfran1068.github.io.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
