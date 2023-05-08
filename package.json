@@ -31,7 +31,7 @@
     "hexo-generator-index": "^0.2.0",
     "hexo-generator-json-content": "^3.0.1",
     "hexo-generator-searchdb": "^1.4.1",
-    "hexo-generator-sitemap": "^1.1.2",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
