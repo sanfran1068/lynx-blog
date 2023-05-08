@@ -1,0 +1,9 @@
+<% if (site.tags.length) { %>
+    <div class="widget-wrap">
+        <div class="widget-corner"></div>
+        <h3 class="widget-title"><%= __('widget.tags') %></h3>
+        <div class="widget">
+            <%- list_tags() %>
+        </div>
+    </div>
+<% } %>

@@ -1,0 +1,42 @@
+.layout-wrap-inner
+    &.list-categories
+        ul
+            margin-left: 15px
+            list-style: none
+            li,
+            .category-list-child
+                border-left: 3px solid color-link
+                background-color: black
+                margin-right: 30px
+                margin-bottom: 5px
+                color: color-default
+                padding: 10px 5px
+                font-size: 16px
+                border-bottom: 1px solid border-color
+                transition: 0.35s ease
+                &:hover
+                    border-left: 50px solid color-link
+                a
+                    line-height: 16px
+                    transition: 0.35s ease
+                    color: color-sidebar-text
+                    &:hover
+                        color: white
+            ul, ol
+                list-style: none
+                li
+                    border: none
+                    &:last-child
+                        padding-bottom: 0px
+        li
+            a
+                &:before
+                    color: color-link
+                    content: "\f0da"
+                    margin-left: 10px
+                    padding-right: 10px
+                    font-size: 16px
+                    font-family: FontAwesome
+                    transition: 0.35s ease
+                &:hover:before
+                    color: black

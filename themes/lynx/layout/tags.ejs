@@ -1,0 +1,10 @@
+<section class="outer layout-wrap">
+    <div class="layout-title">
+        <span class="section-title"><%= page.title %></span>
+    </div>
+    <div class="layout-wrap-inner tag-cloud page-content-wrap">
+        <% if(site.tags.length) { %>
+            <%- tagcloud({min_font: 14, max_font: 28}) %>
+        <% } %>
+    </div>
+</section>
