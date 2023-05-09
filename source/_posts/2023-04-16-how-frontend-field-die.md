@@ -1,5 +1,5 @@
 layout: post
-title: "论前端之死[The End of Front-End Development-Josh Comeau]"
+title: "论前端之死[The End of Front-End Development by Josh Comeau]"
 date: 2023-04-16 21:30:00
 comments: true
 categories: 
@@ -10,7 +10,7 @@ tags:
 - Blog
 ---
 
-[The End of Front-End Development](https://www.joshwcomeau.com/blog/the-end-of-frontend-development/)
+原文：[The End of Front-End Development](https://www.joshwcomeau.com/blog/the-end-of-frontend-development/)
 
 ### AI 带来的失业焦虑
 
