@@ -1,5 +1,5 @@
 layout: post
-title: "论前端之死[The End of Front-End Development by Josh Comeau]"
+title: "论前端之死"
 date: 2023-04-16 21:30:00
 comments: true
 categories: 
