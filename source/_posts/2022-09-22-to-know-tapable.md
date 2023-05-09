@@ -39,7 +39,7 @@ hook.call('19Qingfeng', 'wang', 'haoyu')
 
 #### 根据同步和异步分类
 
-![截屏2023-03-16 下午4.16.48.png](Tapable%20b61b89bee0e14e4096b199f1b9e6f3b8/%25E6%2588%25AA%25E5%25B1%258F2023-03-16_%25E4%25B8%258B%25E5%258D%25884.16.48.png)
+![6000000002244-0-tps-1313-685](https://img.alicdn.com/imgextra/i2/O1CN01sDdVcy1SRnbq3kJc8_!!6000000002244-0-tps-1313-685.jpg)
 
 同步的 hook，只有 tap 是唯一的注册事件的方法，通过 call 方法触发 hook 的执行。
 
