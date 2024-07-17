@@ -1,3 +1,4 @@
+---
 layout: post
 title: "JavaScript中的原型与继承-原型篇"
 date: 2017-04-12 12:00:00

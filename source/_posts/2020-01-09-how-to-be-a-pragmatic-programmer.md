@@ -1,3 +1,4 @@
+---
 layout: post
 title: "怎样做一个Pragmatic Programmer"
 date: 2020-01-09 12:30:00

@@ -1,3 +1,4 @@
+---
 layout: post
 title: "What delete really delete?"
 date: 2020-11-01 21:03:00

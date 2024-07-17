@@ -1,3 +1,4 @@
+---
 layout: post
 title: "JavaScript 设计模式与类"
 date: 2021-04-08 22:00:00

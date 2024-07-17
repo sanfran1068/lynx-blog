@@ -1,3 +1,4 @@
+---
 layout: post
 title: "用 JavaScript 实现有限状态机"
 date: 2021-02-14 22:01:01
