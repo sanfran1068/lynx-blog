@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兰州半马41天备赛计划</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF4D4D;
+            --primary-dark: #E63946;
+            --primary-light: #FF6B6B;
+            --accent: #00D4AA;
+            --accent-dark: #00B894;
+
+            --bg-main: #0f0f12;
+            --bg-card: #1a1a20;
+            --bg-card-hover: #222230;
+            --bg-surface: #252530;
+
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+
+            --border-subtle: rgba(255,255,255,0.08);
+            --border-active: rgba(255,77,77,0.5);
+
+            --rest-bg: rgba(0, 212, 170, 0.15);
+            --rest-border: #00D4AA;
+            --easy-bg: rgba(74, 144, 226, 0.15);
+            --easy-border: #4A90E2;
+            --tempo-bg: rgba(255, 193, 7, 0.15);
+            --tempo-border: #FFC107;
+            --interval-bg: rgba(255, 77, 77, 0.15);
+            --interval-border: #FF4D4D;
+            --threshold-bg: rgba(255, 122, 77, 0.15);
+            --threshold-border: #FF7A4D;
+            --long-bg: rgba(255, 159, 67, 0.15);
+            --long-border: #FF9F43;
+            --recovery-bg: rgba(155, 89, 182, 0.15);
+            --recovery-border: #9B59B6;
+            --race-bg: rgba(255, 77, 77, 0.25);
+            --race-border: #FF4D4D;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        header {
+            position: relative;
+            margin-bottom: 28px;
+            padding: 32px 24px;
+            background: linear-gradient(145deg, #1a1a22 0%, #12121a 100%);
+            border-radius: 24px;
+            border: 1px solid var(--border-subtle);
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,77,77,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(0,212,170,0.1) 0%, transparent 50%);
+            animation: headerGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes headerGlow {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-5%, -5%) rotate(5deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 15px rgba(255,77,77,0.4);
+        }
+
+        .header-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        header h1 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            flex: 1;
+            padding: 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255,255,255,0.06);
+            transform: translateY(-2px);
+        }
+
+        .stat-card .value {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-card .label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .stat-card.highlight {
+            background: linear-gradient(135deg, rgba(255,77,77,0.2), rgba(255,77,77,0.1));
+            border-color: rgba(255,77,77,0.3);
+        }
+
+        .stat-card.highlight .value {
+            background: linear-gradient(135deg, #fff, var(--primary-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .week-tabs-container {
+            margin-bottom: 20px;
+        }
+
+        .week-tabs {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0 12px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .week-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .week-tab {
+            position: relative;
+            padding: 12px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .week-tab:hover {
+            color: var(--text-primary);
+            border-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .week-tab .week-dates {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .week-tab.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255,77,77,0.4);
+        }
+
+        .week-tab.active .week-dates {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .week-tab.completed {
+            background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+            border-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,212,170,0.3);
+        }
+
+        .week-tab.completed .week-dates {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .week-tab.partial {
+            background: var(--bg-surface);
+            border-color: rgba(255,193,7,0.4);
+            color: #FFC107;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 14px 16px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 4px;
+        }
+
+        .week-header {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            padding-left: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .training-card {
+            position: relative;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .training-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .training-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
+            border-color: rgba(255,255,255,0.12);
+        }
+
+        .training-card.completed {
+            opacity: 0.6;
+        }
+
+        .training-card.completed .card-title {
+            text-decoration: line-through;
+            color: var(--text-muted);
+        }
+
+        .training-card.type-rest::before { background: var(--rest-border); }
+        .training-card.type-rest { background: var(--rest-bg); }
+
+        .training-card.type-easy::before { background: var(--easy-border); }
+        .training-card.type-easy { background: var(--easy-bg); }
+
+        .training-card.type-tempo::before { background: var(--tempo-border); }
+        .training-card.type-tempo { background: var(--tempo-bg); }
+
+        .training-card.type-interval::before { background: var(--interval-border); }
+        .training-card.type-interval { background: var(--interval-bg); }
+
+        .training-card.type-threshold::before { background: var(--threshold-border); }
+        .training-card.type-threshold { background: var(--threshold-bg); }
+
+        .training-card.type-long::before { background: var(--long-border); }
+        .training-card.type-long { background: var(--long-bg); }
+
+        .training-card.type-recovery::before { background: var(--recovery-border); }
+        .training-card.type-recovery { background: var(--recovery-bg); }
+
+        .training-card.type-race::before { background: var(--race-border); }
+        .training-card.type-race {
+            background: var(--race-bg);
+            border-color: rgba(255,77,77,0.3);
+        }
+
+        .checkbox {
+            width: 26px;
+            height: 26px;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            color: transparent;
+        }
+
+        .checkbox:hover {
+            border-color: var(--accent);
+            background: rgba(0,212,170,0.1);
+        }
+
+        .checkbox.checked {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #0f0f12;
+            font-weight: bold;
+        }
+
+        .card-date {
+            text-align: center;
+            min-width: 44px;
+        }
+
+        .card-date .day {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .card-date .month {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+        }
+
+        .card-date .weekday {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        .card-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 32px;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        .reset-btn {
+            background: transparent;
+            border: 1px solid var(--border-subtle);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 12px;
+            }
+
+            header {
+                padding: 24px 18px;
+                border-radius: 20px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .stats-row {
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 12px 8px;
+            }
+
+            .stat-card .value {
+                font-size: 1.25rem;
+            }
+
+            .week-tab {
+                padding: 10px 14px;
+                font-size: 0.8rem;
+            }
+
+            .legend {
+                padding: 12px;
+                gap: 6px;
+            }
+
+            .legend-item {
+                font-size: 0.7rem;
+            }
+
+            .training-card {
+                padding: 14px;
+                gap: 12px;
+            }
+
+            .card-title {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-badge">备赛进行中</div>
+                <h1>兰州半马训练计划</h1>
+                <p class="subtitle">41天科学备赛 · 冲击半马</p>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="value">41</div>
+                        <div class="label">总天数</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="value" id="completedDays">0</div>
+                        <div class="label">已完成</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="value" id="remainingDays">41</div>
+                        <div class="label">剩余天数</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="week-tabs-container">
+            <div class="week-tabs" id="weekTabs"></div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color" style="background: var(--rest-bg); border: 1px solid var(--rest-border);"></div>休息</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--easy-bg); border: 1px solid var(--easy-border);"></div>轻松跑</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--tempo-bg); border: 1px solid var(--tempo-border);"></div>节奏跑</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--interval-bg); border: 1px solid var(--interval-border);"></div>间歇跑</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--threshold-bg); border: 1px solid var(--threshold-border);"></div>阈值跑</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--long-bg); border: 1px solid var(--long-border);"></div>长距离</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--recovery-bg); border: 1px solid var(--recovery-border);"></div>恢复</div>
+            <div class="legend-item"><div class="legend-color" style="background: var(--race-bg); border: 1px solid var(--race-border);"></div>比赛</div>
+        </div>
+
+        <div class="week-header" id="currentWeekHeader"></div>
+        <div id="trainingList"></div>
+
+        <footer>
+            <p>数据仅存储在本地设备中</p>
+            <button class="reset-btn" onclick="resetProgress()">重置所有进度</button>
+        </footer>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'lanzhou_halfmarathon_plan';
+
+        const trainingData = [
+            { date: '4/13', weekday: '周一', title: '休息 / 拉伸 / 补水', pace: '', type: 'rest' },
+            { date: '4/14', weekday: '周二', title: '轻松跑 8km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '4/15', weekday: '周三', title: '节奏跑：热身2km + 4km + 放松2km', pace: '主训练 5:18–5:22/km', type: 'tempo' },
+            { date: '4/16', weekday: '周四', title: '休息 / 力量训练 20-30分钟', pace: '深蹲、臀桥、提踵、核心', type: 'rest' },
+            { date: '4/17', weekday: '周五', title: '轻松跑 6-8km', pace: '5:50–6:15/km', type: 'easy' },
+            { date: '4/18', weekday: '周六', title: '长距离 12-14km', pace: '5:50–6:10/km', type: 'long' },
+            { date: '4/19', weekday: '周日', title: '恢复跑 5-6km 或休息', pace: '6:10–6:40/km', type: 'recovery' },
+            { date: '4/20', weekday: '周一', title: '休息', pace: '', type: 'rest' },
+            { date: '4/21', weekday: '周二', title: '轻松跑 8-10km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '4/22', weekday: '周三', title: '节奏跑：热身2km + 5km + 放松2km', pace: '主训练 5:15–5:20/km', type: 'tempo' },
+            { date: '4/23', weekday: '周四', title: '休息 / 力量训练', pace: '', type: 'rest' },
+            { date: '4/24', weekday: '周五', title: '轻松跑 6-8km + 4组100m加速跑', pace: '加速跑逐渐提速', type: 'easy' },
+            { date: '4/25', weekday: '周六', title: '长距离 14-16km', pace: '5:45–6:00/km', type: 'long' },
+            { date: '4/26', weekday: '周日', title: '恢复跑 5-6km 或休息', pace: '6:10–6:40/km', type: 'recovery' },
+            { date: '4/27', weekday: '周一', title: '休息', pace: '', type: 'rest' },
+            { date: '4/28', weekday: '周二', title: '间歇跑：热身2km + 400m×8组 + 放松2km', pace: '间歇60-90秒', type: 'interval' },
+            { date: '4/29', weekday: '周三', title: '轻松跑 8km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '4/30', weekday: '周四', title: '阈值跑：热身2km + 6km + 放松2km', pace: '主训练 5:12–5:15/km', type: 'threshold' },
+            { date: '5/1', weekday: '周五', title: '休息 / 走路', pace: '', type: 'rest' },
+            { date: '5/2', weekday: '周六', title: '长距离 16km', pace: '5:45–6:00/km', type: 'long' },
+            { date: '5/3', weekday: '周日', title: '恢复跑 5-6km', pace: '6:10–6:40/km', type: 'recovery' },
+            { date: '5/4', weekday: '周一', title: '休息', pace: '', type: 'rest' },
+            { date: '5/5', weekday: '周二', title: '间歇跑：热身2km + 800m×5组 + 放松2km', pace: '间歇90秒-2分钟', type: 'interval' },
+            { date: '5/6', weekday: '周三', title: '轻松跑 8km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '5/7', weekday: '周四', title: '节奏跑：热身2km + 7km + 放松2km', pace: '主训练 5:10–5:15/km', type: 'tempo' },
+            { date: '5/8', weekday: '周五', title: '休息 / 力量训练', pace: '', type: 'rest' },
+            { date: '5/9', weekday: '周六', title: '长距离 16-18km', pace: '后5km提到 5:20', type: 'long' },
+            { date: '5/10', weekday: '周日', title: '恢复跑 5-6km 或休息', pace: '6:10–6:40/km', type: 'recovery' },
+            { date: '5/11', weekday: '周一', title: '休息', pace: '', type: 'rest' },
+            { date: '5/12', weekday: '周二', title: '间歇跑：热身2km + 400m×10组 + 放松2km', pace: '间歇60-90秒', type: 'interval' },
+            { date: '5/13', weekday: '周三', title: '轻松跑 8km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '5/14', weekday: '周四', title: '阈值跑：热身2km + 7-8km + 放松2km', pace: '主训练 5:08–5:12/km', type: 'threshold' },
+            { date: '5/15', weekday: '周五', title: '休息', pace: '', type: 'rest' },
+            { date: '5/16', weekday: '周六', title: '长距离 18km', pace: '最后6km提到 5:10–5:15', type: 'long' },
+            { date: '5/17', weekday: '周日', title: '恢复跑 5km 或休息', pace: '6:10–6:40/km', type: 'recovery' },
+            { date: '5/18', weekday: '周一', title: '休息', pace: '', type: 'rest' },
+            { date: '5/19', weekday: '周二', title: '节奏跑：热身2km + 6km + 放松2km', pace: '主训练 5:08–5:12/km', type: 'tempo' },
+            { date: '5/20', weekday: '周三', title: '轻松跑 8km', pace: '5:50–6:10/km', type: 'easy' },
+            { date: '5/21', weekday: '周四', title: '间歇跑：热身2km + 800m×5组 + 放松2km', pace: '间歇90秒-2分钟', type: 'interval' },
+            { date: '5/22', weekday: '周五', title: '休息 / 拉伸', pace: '', type: 'rest' },
+            { date: '5/23', weekday: '周六', title: '轻松跑 5-6km + 4组100m加速跑', pace: '加速跑逐渐提速', type: 'easy' },
+            { date: '5/24', weekday: '周日', title: '比赛日：兰州半马', pace: '目标 1:50:00', type: 'race' }
+        ];
+
+        let completedItems = {};
+        let currentWeek = 0;
+
+        function loadData() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                completedItems = JSON.parse(saved);
+            }
+        }
+
+        function saveData() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(completedItems));
+        }
+
+        function updateStats() {
+            const total = trainingData.length;
+            const completed = Object.keys(completedItems).filter(k => completedItems[k]).length;
+            document.getElementById('completedDays').textContent = completed;
+            document.getElementById('remainingDays').textContent = total - completed;
+        }
+
+        function getCurrentWeek() {
+            const today = new Date();
+
+            for (let i = trainingData.length - 1; i >= 0; i--) {
+                const [month, day] = trainingData[i].date.split('/').map(Number);
+                const itemDate = new Date(2026, month - 1, day);
+                if (today >= itemDate) {
+                    return Math.min(Math.floor(i / 7), 5);
+                }
+            }
+            return 0;
+        }
+
+        function getWeekStatus(weekIndex) {
+            const start = weekIndex * 7;
+            const end = Math.min(start + 7, trainingData.length);
+
+            const completed = trainingData.slice(start, end).filter((item, i) => completedItems[start + i]).length;
+            const total = end - start;
+
+            if (completed === total) return 'completed';
+            if (completed > 0) return 'partial';
+            return 'future';
+        }
+
+        function renderWeekTabs() {
+            const container = document.getElementById('weekTabs');
+            const totalWeeks = Math.ceil(trainingData.length / 7);
+            container.innerHTML = '';
+
+            for (let i = 0; i < totalWeeks; i++) {
+                const status = getWeekStatus(i);
+                const isActive = i === currentWeek;
+                let className = 'week-tab';
+
+                if (isActive) className += ' active';
+                else if (status === 'completed') className += ' completed';
+                else if (status === 'partial') className += ' partial';
+
+                const startDate = trainingData[i * 7].date;
+                const endDate = trainingData[Math.min((i + 1) * 7 - 1, trainingData.length - 1)].date;
+
+                container.innerHTML += `
+                    <button class="${className}" onclick="selectWeek(${i})">
+                        第${i + 1}周
+                        <div class="week-dates">${startDate} ~ ${endDate}</div>
+                    </button>
+                `;
+            }
+        }
+
+        function renderList() {
+            const container = document.getElementById('trainingList');
+            const headerContainer = document.getElementById('currentWeekHeader');
+            container.innerHTML = '';
+
+            const start = currentWeek * 7;
+            const end = Math.min(start + 7, trainingData.length);
+            const weekNum = currentWeek + 1;
+
+            headerContainer.textContent = `第 ${weekNum} 周训练计划`;
+
+            trainingData.slice(start, end).forEach((item, i) => {
+                const index = start + i;
+                const isCompleted = completedItems[index] || false;
+                const [month, day] = item.date.split('/');
+
+                container.innerHTML += `
+                    <div class="training-card type-${item.type} ${isCompleted ? 'completed' : ''}" data-index="${index}">
+                        <div class="checkbox ${isCompleted ? 'checked' : ''}" onclick="toggleComplete(${index})">${isCompleted ? '✓' : ''}</div>
+                        <div class="card-date">
+                            <div class="day">${day}</div>
+                            <div class="month">${month}月</div>
+                            <div class="weekday">${item.weekday}</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">${item.title}</div>
+                            ${item.pace ? `<div class="card-desc">${item.pace}</div>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function selectWeek(weekIndex) {
+            currentWeek = weekIndex;
+            renderWeekTabs();
+            renderList();
+        }
+
+        function toggleComplete(index) {
+            completedItems[index] = !completedItems[index];
+            saveData();
+            updateStats();
+            renderWeekTabs();
+            renderList();
+        }
+
+        function resetProgress() {
+            if (confirm('确定要重置所有进度吗？')) {
+                completedItems = {};
+                saveData();
+                updateStats();
+                renderWeekTabs();
+                renderList();
+            }
+        }
+
+        loadData();
+        currentWeek = getCurrentWeek();
+        updateStats();
+        renderWeekTabs();
+        renderList();
+    </script>
+</body>
+</html>
